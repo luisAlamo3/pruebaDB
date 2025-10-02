@@ -1,0 +1,28 @@
+{
+  "name": "Proyecto con PostgreSQL",
+  
+  
+  "features": {
+    "ghcr.io/devcontainers/features/common-utils:1": {
+      "installZsh": "true",
+      "configureZshAsDefaultShell": "true"
+    }
+  },
+
+  "service": "app",
+  "dockerComposeFile": "docker-compose.yml",
+  
+  "forwardPorts": [5432],
+  
+  
+  "postCreateCommand": "sudo apt-get update && sudo apt-get install -y postgresql-client && echo 'El entorno está listo. PostgreSQL (host: db) disponible en el puerto 5432.'",
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-azuretools.vscode-docker",
+        "ms-mssql.mssql"
+      ]
+    }
+  }
+}
