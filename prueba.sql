@@ -8,15 +8,11 @@ create table clientes(
     email varchar(50)
 );
 
-
-
 create table agentes(
     id_agente serial primary key,
     nombre varchar(100),
     email varchar(100)
 );
-
-
 
 create table tickets(
     id_ticket serial primary key,
@@ -29,8 +25,6 @@ create table tickets(
     foreign key (id_cliente) references clientes(id_cliente) on delete cascade on update cascade,
     foreign key (id_agente) references agentes(id_agente) on delete cascade on update cascade
 );
-
-
 
 create table historial(
     id_historial serial primary key,
